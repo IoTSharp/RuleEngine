@@ -4,7 +4,6 @@ using Xunit;
 
 namespace GSoulavy.RuleEngine.Tests.Kernel
 {
-   using RuleEngine;
    public class ValidateCollectionTests
    {
       [Fact(DisplayName = "ValidateCollection: true")]
@@ -18,7 +17,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          };
 
          const string expression = "f.Any(p => p.Name.Equals(\"John\") && p.Age < 24)";
-         var ruleEngine = new Kernel();
+         var ruleEngine = new RulesEngine();
          // Act
          var result = ruleEngine.Validate<IEnumerable<Person>>(people, expression);
 

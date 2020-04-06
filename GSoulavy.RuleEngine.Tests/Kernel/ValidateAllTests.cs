@@ -12,12 +12,12 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          // Arrange
          var rules = new List<Rule>
          {
-            new Rule {Key = "1", Expression = "(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2"},
-            new Rule {Key = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5" }
+            new Rule {RuleName = "1", Expression = "(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2"},
+            new Rule {RuleName = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5" }
          };
 
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RuleEngine.Kernel();
+         var ruleEngine = new RulesEngine();
          ruleEngine.AddRules(rules);
          // Act
          var result = ruleEngine.ValidateAll(p, "1");
@@ -29,9 +29,9 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
       public void ValidateAllWp_True()
       {
          // Arrange
-         var rule = new Rule {Key = "1", Expression = "(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2"};
+         var rule = new Rule {RuleName = "1", Expression = "(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2"};
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RuleEngine.Kernel();
+         var ruleEngine = new RulesEngine();
          ruleEngine.AddRule(rule);
          // Act
          var result = ruleEngine.ValidateAll(p);
@@ -45,12 +45,12 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          // Arrange
          var rules = new List<Rule>
          {
-            new Rule {Key = "1", Expression = "(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2"},
-            new Rule {Key = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5"}
+            new Rule {RuleName = "1", Expression = "(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2"},
+            new Rule {RuleName = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5"}
          };
 
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RuleEngine.Kernel();
+         var ruleEngine = new RulesEngine();
          ruleEngine.AddRules(rules);
 
          // Act
@@ -65,11 +65,11 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          // Arrange
          var rules = new List<Rule>
          {
-            new Rule {Key = "1", Expression = "(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2"},
-            new Rule {Key = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5"}
+            new Rule {RuleName = "1", Expression = "(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2"},
+            new Rule {RuleName = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5"}
          };
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RuleEngine.Kernel();
+         var ruleEngine = new RulesEngine();
          ruleEngine.AddRules(rules);
          // Act
          var result = ruleEngine.ValidateAll(p);

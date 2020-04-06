@@ -11,7 +11,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          // Arrange
          const string expression = @"(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5";
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RuleEngine.Kernel();
+         var ruleEngine = new RulesEngine();
          // Act
          var result = ruleEngine.Evaluate<Person, bool>(p, expression);
          // Assert
@@ -24,7 +24,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          // Arrange
          const string expression = @"(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2";
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RuleEngine.Kernel();
+         var ruleEngine = new RulesEngine();
          // Act
          var result = ruleEngine.Evaluate<Person, bool>(p, expression);
          // Assert

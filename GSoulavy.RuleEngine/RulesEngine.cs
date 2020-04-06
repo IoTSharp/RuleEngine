@@ -7,34 +7,34 @@ using System.Linq.Expressions;
 
 namespace GSoulavy.RuleEngine
 {
-   public class Kernel : IKernel
+   public class RulesEngine
    {
       private readonly List<(string Key, string Value)> _rules;
 
-      public Kernel()
+      public RulesEngine()
       {
          _rules = new List<(string Key, string Value)>();
       }
 
-      public void AddRule(IRule rule)
+      public void AddRule(Rule rule)
       {
-         _rules.Add((rule.Key, rule.Expression));
+         _rules.Add((rule.RuleName, rule.Expression));
       }
 
-      public void AddRules(IEnumerable<IRule> rules)
+      public void AddRules(IEnumerable<Rule> rules)
       {
-         _rules.AddRange(rules.Select(r => (r.Key, r.Expression)));
+         _rules.AddRange(rules.Select(r => (r.RuleName, r.Expression)));
       }
 
-      public void RemoveRule(IRule rule)
+      public void RemoveRule(Rule rule)
       {
-         _rules.Remove((rule.Key, rule.Expression));
+         _rules.Remove((rule.RuleName, rule.Expression));
       }
 
-      public void RemoveRules(IEnumerable<IRule> rules)
+      public void RemoveRules(IEnumerable<Rule> rules)
       {
          foreach (var rule in rules)
-            _rules.Remove((rule.Key, rule.Expression));
+            _rules.Remove((rule.RuleName, rule.Expression));
       }
 
       public bool Validate<T>(T fact, string rule)
