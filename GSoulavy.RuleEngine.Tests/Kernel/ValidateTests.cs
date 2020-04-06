@@ -30,5 +30,19 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          // Assert
          Assert.True(result);
       }
-   }
+
+        [Fact(DisplayName = "Validate_ByJson: true")]
+        public void Validate_ByJson_True()
+        {
+            // Arrange
+            const string expression = @"(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2";
+            var p = new   { Age = 37, Income = 45000, NumberOfChildren = 3 };
+            var jp = Newtonsoft.Json.Linq.JObject.Parse( Newtonsoft.Json.JsonConvert.SerializeObject(p));
+            var ruleEngine = new RuleEngine.Kernel();
+            // Act
+            var result = ruleEngine.Validate(jp, expression);
+            // Assert
+            Assert.True(result);
+        }
+    }
 }
