@@ -1,4 +1,4 @@
-﻿namespace GSoulavy.RuleEngine.Tests.Models
+﻿namespace IoTSharp.RuleEngine.Tests.Models
 {
    public class Person
    {

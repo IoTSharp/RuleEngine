@@ -3,21 +3,21 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Gab Soulavy</Authors>
-    <Company></Company>
+    <Authors>Gab Soulavy,IoTSharp</Authors>
+    <Company>IoTSharp</Company>
     <Description>This simple rule engine is a .NET Standard library 2.0, which uses Microsoft's DLR DynamicExpressionParser in the background. The goal was to make a simple engine which is easy to use and compatible with many projects.
 Fork from GSoulavy.RuleEngine</Description>
-    <Copyright>Gab Soulavy</Copyright>
+    <Copyright>Gab Soulavy,IoTSharp,MaiKeBing</Copyright>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/gsoulavy/RuleEngine</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/maikebing/RuleEngine</RepositoryUrl>
-    <RepositoryType>https://github.com/maikebing/RuleEngine.git</RepositoryType>
+    <PackageProjectUrl>https://github.com/IoTSharp/RuleEngine</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/IoTSharp/RuleEngine</RepositoryUrl>
+    <RepositoryType>https://github.com/IoTSharp/RuleEngine.git</RepositoryType>
     <PackageTags>Rules Engine dotnet standard dynamic linq expression</PackageTags>
-    <PackageReleaseNotes>Add MIT License</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <AssemblyVersion>1.0.2.0</AssemblyVersion>
     <FileVersion>1.0.2.0</FileVersion>
     <Version>1.0.2</Version>
-    <PackageId>Silkier.RuleEngine</PackageId>
+    <PackageId>IoTSharp.RuleEngine</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GSoulavy.RuleEngine\GSoulavy.RuleEngine.csproj" />
+    <ProjectReference Include="..\IoTSharp.RuleEngine\IoTSharp.RuleEngine.csproj" />
   </ItemGroup>
 
   <ItemGroup>

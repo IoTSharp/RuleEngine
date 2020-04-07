@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
-using GSoulavy.RuleEngine.Tests.Models;
+using IoTSharp.RuleEngine.Tests.Models;
 using Xunit;
 
-namespace GSoulavy.RuleEngine.Tests.Kernel
+namespace IoTSharp.RuleEngine.Tests.Kernel
 {
-   public class EvaluateCollectionTests
+   public class ValidateCollectionTests
    {
-      [Fact(DisplayName = "EvaluateCollection: true")]
-      public void EvaluateCollection_True()
+      [Fact(DisplayName = "ValidateCollection: true")]
+      public void ValidateCollection_True()
       {
          // Arrange
          var people = new List<Person>
@@ -17,9 +17,10 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          };
 
          const string expression = "f.Any(p => p.Name.Equals(\"John\") && p.Age < 24)";
-         var ruleEngine = new RulesEngine();
+         var ruleEngine = new RuleEngine.Kernel();
          // Act
-         var result = ruleEngine.Evaluate<IEnumerable<Person>, bool>(people, expression);
+         var result = ruleEngine.Validate<IEnumerable<Person>>(people, expression);
+
          // Assert
          Assert.True(result);
       }

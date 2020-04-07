@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace GSoulavy.RuleEngine.Tests.RuleFlow
+namespace IoTSharp.RuleEngine.Tests.RuleFlow
 {
     public class RuleFlowEngineTest
     {
@@ -27,7 +27,7 @@ namespace GSoulavy.RuleEngine.Tests.RuleFlow
                     RuleExpressionType = RuleExpressionType.LambdaExpression
                 }
             };
-            var  engine = new RuleFlowEngine(rule);
+            var  engine = new RulesEngine(rule);
             var result = engine.Execute(Properties.Resources.MsgT_Exit_Waste);
             Assert.True(result.Result);
             Assert.Equal("新疆米东北主线站", result.Output);

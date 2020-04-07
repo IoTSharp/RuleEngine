@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using GSoulavy.RuleEngine.Tests.Models;
+using IoTSharp.RuleEngine.Tests.Models;
 using Xunit;
 
-namespace GSoulavy.RuleEngine.Tests.Kernel
+namespace IoTSharp.RuleEngine.Tests.Kernel
 {
    public class ValidateAnyTests
    {
@@ -16,7 +16,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
             new Rule {RuleName = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5"}
          };
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RulesEngine();
+         var ruleEngine = new RuleEngine.Kernel();
          ruleEngine.AddRules(rules);
          // Act
          var result = ruleEngine.ValidateAny(p, "2");
@@ -34,7 +34,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
             new Rule {RuleName = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5"}
          };
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RulesEngine();
+         var ruleEngine = new RuleEngine.Kernel();
          ruleEngine.AddRules(rules);
          // Act
          var result = ruleEngine.ValidateAny(p, "1");
@@ -52,7 +52,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
             new Rule {RuleName = "2", Expression = "(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5"}
          };
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RulesEngine();
+         var ruleEngine = new RuleEngine.Kernel();
          ruleEngine.AddRules(rules);
          // Act
          var result = ruleEngine.ValidateAny(p);

@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GSoulavy.RuleEngine
+namespace IoTSharp.RuleEngine
 {
-    public class RuleFlowEngine
+    public class RulesEngine
     {
         private readonly Rule root;
-        private readonly RulesEngine engine = new RulesEngine();
-        public RuleFlowEngine(Rule rule)
+        private readonly Kernel engine = new Kernel();
+        public RulesEngine(Rule rule)
         {
             root = rule;
             engine.AddRule(rule);

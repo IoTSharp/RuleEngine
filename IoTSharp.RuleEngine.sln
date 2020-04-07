@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSoulavy.RuleEngine", "GSoulavy.RuleEngine\GSoulavy.RuleEngine.csproj", "{F2099138-9D97-46F4-8121-A13BDFC858B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTSharp.RuleEngine", "IoTSharp.RuleEngine\IoTSharp.RuleEngine.csproj", "{F2099138-9D97-46F4-8121-A13BDFC858B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSoulavy.RuleEngine.Tests", "GSoulavy.RuleEngine.Tests\GSoulavy.RuleEngine.Tests.csproj", "{C17860A9-5E73-431F-9C1B-0AF2FE922891}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTSharp.RuleEngine.Tests", "IoTSharp.RuleEngine.Tests\IoTSharp.RuleEngine.Tests.csproj", "{C17860A9-5E73-431F-9C1B-0AF2FE922891}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5951A6C1-6995-4F32-935C-E6AA1F6D8252}"
 	ProjectSection(SolutionItems) = preProject
@@ -29,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5C2A666-E090-4179-9CFA-CE08AA89D41A}
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,7 @@
-﻿using GSoulavy.RuleEngine.Tests.Models;
+﻿using IoTSharp.RuleEngine.Tests.Models;
 using Xunit;
 
-namespace GSoulavy.RuleEngine.Tests.Kernel
+namespace IoTSharp.RuleEngine.Tests.Kernel
 {
    public class ValidateTests
    {
@@ -11,7 +11,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          // Arrange
          const string expression = @"(f.Age > 3 && f.Income > 100000) || f.NumberOfChildren > 5";
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RulesEngine();
+         var ruleEngine = new RuleEngine.Kernel();
          // Act
          var result = ruleEngine.Validate(p, expression);
          // Assert
@@ -24,7 +24,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
          // Arrange
          const string expression = @"(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2";
          var p = new Person {Age = 37, Income = 45000, NumberOfChildren = 3};
-         var ruleEngine = new RulesEngine();
+         var ruleEngine = new RuleEngine.Kernel();
          // Act
          var result = ruleEngine.Validate(p, expression);
          // Assert
@@ -38,7 +38,7 @@ namespace GSoulavy.RuleEngine.Tests.Kernel
             const string expression = @"(f.Age > 3 && f.Income < 50000) || f.NumberOfChildren > 2";
             var p = new   { Age = 37, Income = 45000, NumberOfChildren = 3 };
             var jp = Newtonsoft.Json.Linq.JObject.Parse( Newtonsoft.Json.JsonConvert.SerializeObject(p));
-            var ruleEngine = new RulesEngine();
+            var ruleEngine = new RuleEngine.Kernel();
             // Act
             var result = ruleEngine.Validate(jp, expression);
             // Assert

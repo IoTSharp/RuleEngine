@@ -3,7 +3,7 @@ using Newtonsoft.Json.Schema;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace GSoulavy.RuleEngine
+namespace IoTSharp.RuleEngine
 {
     public enum ErrorType
     {

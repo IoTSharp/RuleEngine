@@ -5,13 +5,13 @@ using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 
-namespace GSoulavy.RuleEngine
+namespace IoTSharp.RuleEngine
 {
-   public class RulesEngine
+   public class Kernel
    {
       private readonly List<(string Key, string Value)> _rules;
 
-      public RulesEngine()
+      public Kernel()
       {
          _rules = new List<(string Key, string Value)>();
       }

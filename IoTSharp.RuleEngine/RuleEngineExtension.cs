@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GSoulavy.RuleEngine
+namespace IoTSharp.RuleEngine
 {
     public static class RuleEngineExtension
     {
