@@ -1,10 +1,45 @@
-# RuleEngine
+# IoTSharp.RuleEngine
+
+
+# About  IoTSharp.RuleEngine 
+ IoTSharp.RuleEngine is a https://github.com/gsoulavy/RuleEngine fork, I'm  will  implement a rule engine for IoTSharp based on https://github.com/gsoulavy/RuleEngine, so, thanks to Gab Soulavy for the great work.
+ 
+ 
 
 ### Purpose
 
 This simple rule engine is a .NET Standard library 2.0, which uses Microsoft's DLR DynamicExpressionParser in the background. The goal was to make a simple engine which is easy to use and compatible with many projects.
 
 ### Use
+
+
+##### Workflow Rules Engine
+
+下面的示例实现了 在输入的数据中通过规则链MsgT_Exit_Waste 中的 STATION_NAME  不为空并且不以“某某某收费站”开头的数据输出， 这是个简单的例子 只有 Then , 没有Else  
+
+```
+         Rule rule = new Rule()
+            {
+                RuleName = "data",
+                ErrorType = ErrorType.Error,
+                ErrorMessage = "未能找到数据",
+                Expression = "f.MsgT_Exit_Waste!=null",
+                ThenSelect = "MsgT_Exit_Waste",
+                Then = new Rule()
+                {
+                    Expression = "f.STATION_NAME!=null && !f.STATION_NAME.StartsWith(\"某某收费站\")",
+                    ThenSelect = "STATION_NAME",
+                    ErrorMessage = "收费站配置信息错误",
+                    RuleName = "moumou",
+                    RuleExpressionType = RuleExpressionType.LambdaExpression
+                }
+            };
+            var  engine = new RulesEngine(rule);
+            var result = engine.Execute(Properties.Resources.MsgT_Exit_Waste);
+            Assert.True(result.Result);
+            Assert.Equal("新疆米东北主线站", result.Output);
+```
+
 
 #### Instantiating the kernel
 
@@ -83,3 +118,4 @@ var result = ruleEngine.ValidateAny(f);
 var result = ruleEngine.ValidateAny(f, "1");
 // result = true
 ```
+
