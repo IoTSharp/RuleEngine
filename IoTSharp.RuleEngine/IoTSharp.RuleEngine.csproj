@@ -8,7 +8,7 @@
     <Description>This simple rule engine is a .NET Standard library 2.0, which uses Microsoft's DLR DynamicExpressionParser in the background. The goal was to make a simple engine which is easy to use and compatible with many projects.
 Fork from GSoulavy.RuleEngine</Description>
     <Copyright>Gab Soulavy,IoTSharp,MaiKeBing</Copyright>
-    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/IoTSharp/RuleEngine</PackageProjectUrl>
     <RepositoryUrl>https://github.com/IoTSharp/RuleEngine</RepositoryUrl>
     <RepositoryType>https://github.com/IoTSharp/RuleEngine.git</RepositoryType>
@@ -18,12 +18,20 @@ Fork from GSoulavy.RuleEngine</Description>
     <FileVersion>1.0.2.0</FileVersion>
     <Version>1.0.2</Version>
     <PackageId>IoTSharp.RuleEngine</PackageId>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.23" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
