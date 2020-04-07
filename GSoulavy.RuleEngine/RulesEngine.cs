@@ -63,7 +63,9 @@ namespace GSoulavy.RuleEngine
             if (typeof(T) == typeof(JObject))
             {
                 JObject jObject = fact as JObject;
-                var dc = from p in jObject.Properties() select new DynamicProperty(p.Name, JTokenTypeToType(p.Value.Type));
+                var dc = from p in jObject.Properties()
+                         where   p.Value.IsSupport()
+                         select new DynamicProperty(p.Name, p.Value.Type.JTokenTypeToType());
                 var type = DynamicClassFactory.CreateType(dc.ToArray());
                 parameter = Expression.Parameter(type, "f");
                 obj = jObject.ToObject(type);
@@ -75,71 +77,6 @@ namespace GSoulavy.RuleEngine
             }
             var lambdaExpression = DynamicExpressionParser.ParseLambda(new[] { parameter }, null, rule);
             return (TR)lambdaExpression.Compile().DynamicInvoke(obj);
-        }
-         Type JTokenTypeToType(JTokenType jTokenType)
-        {
-            Type t;
-            switch (jTokenType)
-            {
-                case JTokenType.None:
-                    t =typeof(string);
-                    break;
-                case JTokenType.Object:
-                    t = typeof(string);
-                    break;
-                case JTokenType.Array:
-                    t = typeof(object);
-                    break;
-                case JTokenType.Constructor:
-                    t = typeof(string);
-                    break;
-                case JTokenType.Property:
-                    t = typeof(string);
-                    break;
-                case JTokenType.Comment:
-                    t = typeof(string);
-                    break;
-                case JTokenType.Integer:
-                    t = typeof(int);
-                    break;
-                case JTokenType.Float:
-                    t = typeof(float);
-                    break;
-                case JTokenType.String:
-                    t = typeof(string);
-                    break;
-                case JTokenType.Boolean:
-                    t = typeof(bool);
-                    break;
-                case JTokenType.Null:
-                    t = typeof(string);
-                    break;
-                case JTokenType.Undefined:
-                    t = typeof(string);
-                    break;
-                case JTokenType.Date:
-                    t = typeof(DateTime);
-                    break;
-                case JTokenType.Raw:
-                    t = typeof(byte[]);
-                    break;
-                case JTokenType.Bytes:
-                    t = typeof(byte[]);
-                    break;
-                case JTokenType.Guid:
-                    t = typeof(Guid);
-                    break;
-                case JTokenType.Uri:
-                    t = typeof(Uri);
-                    break;
-                case JTokenType.TimeSpan:
-                    t = typeof(TimeSpan);
-                    break;
-                default:
-                    t = typeof(string);
-                    break;
-            }
-            return t;
         }
     }
 }
