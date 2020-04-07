@@ -7,6 +7,16 @@ namespace IoTSharp.RuleEngine
 {
     public static class RuleEngineExtension
     {
+        public static RuleResult OnSuccess(this RuleResult p, Action<RuleResult> action)
+        {
+            action.Invoke(p);
+            return p;
+        }
+        public static RuleResult OnFailed(this RuleResult p, Action<RuleResult> action)
+        {
+            action.Invoke(p);
+            return p;
+        }
         public static bool IsSupport(this JValue p)
         {
             return p.Type.IsSupport();
